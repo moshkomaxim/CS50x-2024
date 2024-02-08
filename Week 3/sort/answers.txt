@@ -1,0 +1,6 @@
+sort1 uses: Bubble sort
+How do you know?: Because it is most faster when processing sorted text files, and it is most slower when processing reversed text files.
+sort2 uses: Merge sort
+How do you know?: Because it has optimal speed when processing all kind of text files
+sort3 uses: Selection sort
+How do you know?: It has large unnecesary workload, but a bit faster when processing already sorted lists
