@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Value</th>
+            <th scope="col">Time</th>
+            <th scope="col">Remain cash</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            {% if result["type"] == "buy" %}
+                <td style="background-color:#72ED6F">{{ result["type"].title() }}</td>
+                <td style="background-color:#72ED6F">{{ result["symbol"] }}</td>
+                <td style="background-color:#72ED6F">{{ result["shares"] }}</td>
+                <td style="background-color:#72ED6F">{{ result["price"] | usd }}</td>
+                <td style="background-color:#72ED6F">{{ result["value"] | usd }}</td>
+                <td style="background-color:#72ED6F">{{ result["time"] }}</td>
+                <td style="background-color:#72ED6F">{{ result["cash"] | usd }}</td>
+            {% else %}
+                <td style="background-color:#F25A5A">{{ result["type"].title() }}</td>
+                <td style="background-color:#F25A5A">{{ result["symbol"] }}</td>
+                <td style="background-color:#F25A5A">{{ result["shares"] }}</td>
+                <td style="background-color:#F25A5A">{{ result["price"] | usd }}</td>
+                <td style="background-color:#F25A5A">{{ result["value"] | usd }}</td>
+                <td style="background-color:#F25A5A">{{ result["time"] }}</td>
+                <td style="background-color:#F25A5A">{{ result["cash"] | usd }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

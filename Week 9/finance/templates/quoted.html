@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Symbol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ result["name"] }}</td>
+            <td>{{ result["price"] | usd }}</td>
+            <td>{{ result["symbol"] }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
+

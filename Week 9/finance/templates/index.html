@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <td>{{ result["symbol"] }}</td>
+            <td>{{ result["shares"] }}</td>
+            <td>{{ result["price"] | usd }}</td>
+            <td>{{ result["value"] | usd }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>Cash: {{ cash | usd }}</p>
+{% endblock %}
